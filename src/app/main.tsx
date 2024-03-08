@@ -5,24 +5,19 @@ import { router } from '@/pages/router';
 import { RouterProvider } from '@vkontakte/vk-mini-apps-router';
 import bridge from '@vkontakte/vk-bridge';
 
+void bridge.send('VKWebAppInit');
 
+const container = document.querySelector('#root') as HTMLElement;
+const root = createRoot(container);
 
-const main = () => {
-    const container = document.querySelector('#root') as HTMLElement;
-    const root = createRoot(container);
-
-    root.render(
-        <ConfigProvider>
-            <AdaptivityProvider>
-                <AppRoot>
-                    <RouterProvider router={router}>
-                        <App />
-                    </RouterProvider>
-                </AppRoot>
-            </AdaptivityProvider>
-        </ConfigProvider>,
-    );
-};
-
-
-bridge.send('VKWebAppInit').finally(main);
+root.render(
+    <ConfigProvider>
+        <AdaptivityProvider>
+            <AppRoot>
+                <RouterProvider router={router}>
+                    <App />
+                </RouterProvider>
+            </AppRoot>
+        </AdaptivityProvider>
+    </ConfigProvider>,
+);
