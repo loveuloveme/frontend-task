@@ -8,7 +8,7 @@ npm install
 ```
 ### VK конфиг
 
-Создать в корне файл
+Создать в корне файл `vk_hosting_congif.json`
 
 ```
 {
