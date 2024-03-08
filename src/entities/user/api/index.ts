@@ -1,0 +1,1 @@
+export { userQueries as queries } from './user.queries';

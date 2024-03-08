@@ -1,0 +1,1 @@
+export * as catApi from './api';
